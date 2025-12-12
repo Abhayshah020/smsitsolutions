@@ -4,10 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export default function About() {
   const team = [
-    { name: "Sanjay Mishra", role: "Founder & CEO", image: "👨‍💼" },
-    { name: "Maya Singh", role: "CTO", image: "👩‍💼" },
-    { name: "Rohit Patel", role: "Lead Architect", image: "👨‍💻" },
-    { name: "Ananya Sharma", role: "Head of Operations", image: "👩‍💼" },
+    { name: "Manish Kumar Shah", role: "Founder & CEO", image: "/manishkumarshah.jpg" },
   ]
 
   const awards = [
@@ -108,10 +105,8 @@ export default function About() {
           <h2 className="text-4xl font-bold mb-12 text-center">Our Team</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-full aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 text-6xl">
-                  {member.image}
-                </div>
+              <div key={index} className="text-center" >
+                <img src={member.image} alt={member.name} className="w-full aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 text-6xl" />
                 <h3 className="font-bold text-lg">{member.name}</h3>
                 <p className="text-foreground/60">{member.role}</p>
               </div>

@@ -53,20 +53,24 @@ export default function Contact() {
             </div>
             <h3 className="text-xl font-bold mb-2">Email</h3>
             <p className="text-foreground/70">info@smsitsolutions.com.au</p>
+            <p className="text-foreground/70">contact@smsitsolutions.com.au</p>
           </div>
           <div className="p-8 rounded-xl bg-card border border-border text-center">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
               <Phone size={24} className="text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Phone</h3>
-            <p className="text-foreground/70">+977-1-1234567</p>
+            <p className="text-foreground/70">+977 980-3616675</p>
+            <p className="text-foreground/70">+977 986-2017411</p>
+            <p className="text-foreground/70">+61 450-366-703</p>
           </div>
           <div className="p-8 rounded-xl bg-card border border-border text-center">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
               <MapPin size={24} className="text-white" />
             </div>
             <h3 className="text-xl font-bold mb-2">Location</h3>
-            <p className="text-foreground/70">Kathmandu, Nepal</p>
+            <p className="text-foreground/70">SMS IT Solutions –</p>
+            <p className="text-foreground/70">Koteshwor (Opp. Bhatbhateni)</p>
           </div>
         </div>
 
@@ -151,12 +155,9 @@ export default function Contact() {
           {/* Map Placeholder */}
           <div>
             <h2 className="text-3xl font-bold mb-8">Find Us Here</h2>
-            <div className="w-full h-96 rounded-xl bg-muted border border-border overflow-hidden">
-              <img src="/map-office-location-kathmandu.jpg" alt="Office location" className="w-full h-full object-cover" />
-            </div>
             <div className="mt-8 p-6 rounded-lg bg-card border border-border">
               <h3 className="font-bold text-lg mb-2">SMS IT Solutions</h3>
-              <p className="text-foreground/70 mb-4">Kathmandu, Nepal</p>
+              <p className="text-foreground/70 mb-4">Kathmandu, Koteshwor (Opp. Bhatbhateni), Nepal</p>
               <p className="text-foreground/60 text-sm">
                 We're located in the heart of Kathmandu's tech hub, easily accessible and ready to serve you.
               </p>
