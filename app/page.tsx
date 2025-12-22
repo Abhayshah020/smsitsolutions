@@ -71,7 +71,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-accent/5 px-4">
+      {/* <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-accent/5 px-4">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-40 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
@@ -117,7 +117,74 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section> */}
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+
+        {/* Background Video */}
+        <div className="absolute inset-0 -z-20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/heroBg.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 -z-10 bg-black/80" />
+
+        {/* Existing glowing gradient blobs */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-40 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className={`animate-fadeInUp ${mounted ? "opacity-100" : "opacity-0"}`}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
+              Empowering Businesses With
+              <br />
+              <span className="gradient-text">Smart IT Solutions</span>
+            </h1>
+
+            <p className="text-lg text-white/80 mb-8 leading-relaxed">
+              SMS IT Solutions delivers reliable software, IT infrastructure, cloud solutions and digital transformation
+              services tailored to modern businesses.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold transition-all hover:bg-primary/90 hover:scale-105"
+              >
+                Get Started <ArrowRight size={20} />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white text-white px-8 py-4 text-lg font-semibold transition-all hover:bg-white/10"
+              >
+                Book Consultation
+              </Link>
+            </div>
+          </div>
+
+          <div className={`animate-slideInLeft ${mounted ? "opacity-100" : "opacity-0"}`}>
+            <div className="relative h-96 md:h-full min-h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden backdrop-blur-sm">
+              <img
+                src="/modern-tech-office-workspace.jpg"
+                alt="Tech workspace"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </section>
+
 
       {/* Services Overview */}
       <section className="py-20 md:py-32 px-4 bg-card">

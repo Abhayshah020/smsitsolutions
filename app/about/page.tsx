@@ -1,10 +1,14 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CheckCircle2 } from "lucide-react"
+import Image from "next/image"
 
 export default function About() {
   const team = [
     { name: "Manish Kumar Shah", role: "Founder & CEO", image: "/manishkumarshah.jpg" },
+    { name: "Abhay Shah", role: "Director & CTO", image: "/3.jpeg" },
+    { name: "Kripanand Sah", role: "Social Media Manager", image: "/2.jpeg" },
+    { name: "Rajkumar Subedi", role: "Managing Director", image: "/3.jpg" },
   ]
 
   const awards = [
@@ -20,9 +24,22 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="absolute inset-0 -z-20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/heroBg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 -z-10 bg-black/80" />
+
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">About SMS IT Solutions</h1>
-          <p className="text-xl text-foreground/70 max-w-2xl">Smart Solutions for a Smarter Future</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">About SMS IT Solutions</h1>
+          <p className="text-xl text-foreground/70 max-w-2xl text-white">Smart Solutions for a Smarter Future</p>
         </div>
       </section>
 
@@ -105,8 +122,17 @@ export default function About() {
           <h2 className="text-4xl font-bold mb-12 text-center">Our Team</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {team.map((member, index) => (
-              <div key={index} className="text-center" >
-                <img src={member.image} alt={member.name} className="w-full aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 text-6xl" />
+              <div key={index} className="text-center flex flex-col items-center justify-center">
+                <div className="relative w-[150px] h-[150px] rounded-full overflow-hidden border border-[#ccc] mb-4">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="150px"
+                  />
+                </div>
+                {/* <img src={member.image} alt={member.name} className="w-full aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 text-6xl" /> */}
                 <h3 className="font-bold text-lg">{member.name}</h3>
                 <p className="text-foreground/60">{member.role}</p>
               </div>
