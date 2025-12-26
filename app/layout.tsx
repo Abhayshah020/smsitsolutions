@@ -31,12 +31,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "SMS IT Solutions" }],
   creator: "SMS IT Solutions",
-  metadataBase: new URL("https://www.smsitsolutions.com"), // change to your real domain
+  metadataBase: new URL("https://www.smsitsolutions.com.au"), // change to your real domain
   openGraph: {
     title: "SMS IT Solutions | IT Services & Software Development",
     description:
       "Reliable and scalable IT solutions including software development, cloud, cybersecurity, and infrastructure services.",
-    url: "https://www.smsitsolutions.com",
+    url: "https://www.smsitsolutions.com.au",
     siteName: "SMS IT Solutions",
     locale: "en_US",
     type: "website",

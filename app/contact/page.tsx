@@ -36,9 +36,21 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="absolute inset-0 -z-20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/heroBg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 -z-10 bg-black/80" />
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
-          <p className="text-xl text-foreground/70 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Get in Touch</h1>
+          <p className="text-xl text-foreground/70 max-w-2xl text-white/80">
             Let's build something great together. Reach out to us today!
           </p>
         </div>

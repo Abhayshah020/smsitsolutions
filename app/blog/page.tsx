@@ -1,7 +1,5 @@
 "use client"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Search, ArrowRight } from "lucide-react"
+import { ArrowRight, Search } from "lucide-react"
 import { useState } from "react"
 
 export default function Blog() {
@@ -14,7 +12,8 @@ export default function Blog() {
       excerpt: "Exploring emerging trends and technologies shaping the cloud landscape.",
       category: "Cloud",
       date: "Dec 10, 2025",
-      author: "Sanjay Mishra",
+      author: "Abhay Shah",
+      slug: "/blog/cloud-computing-future",
       image: "/cloud-computing-future.jpg",
     },
     {
@@ -22,7 +21,8 @@ export default function Blog() {
       excerpt: "Essential security measures to protect your distributed workforce.",
       category: "Security",
       date: "Dec 8, 2025",
-      author: "Maya Singh",
+      author: "Abhay Shah",
+      slug: "/blog/cybersecurity-remote-teams",
       image: "/cybersecurity-remote-work.png",
     },
     {
@@ -30,15 +30,17 @@ export default function Blog() {
       excerpt: "A guide to designing scalable microservices architecture.",
       category: "Software",
       date: "Dec 5, 2025",
-      author: "Rohit Patel",
+      author: "Abhay Shah",
+      slug: "/blog/microservices-architecture",
       image: "/microservices-architecture.png",
     },
     {
       title: "AI/ML Integration in Business Applications",
       excerpt: "How to leverage AI and machine learning for business growth.",
       category: "AI",
+      slug: "/blog/artificial-intelligence-machine",
       date: "Dec 1, 2025",
-      author: "Ananya Sharma",
+      author: "Abhay Shah",
       image: "/artificial-intelligence-machine-learning.png",
     },
     {
@@ -46,7 +48,8 @@ export default function Blog() {
       excerpt: "Implementing DevOps practices in your organization effectively.",
       category: "DevOps",
       date: "Nov 28, 2025",
-      author: "Sanjay Mishra",
+      slug: "/blog/devops-practices-implementation",
+      author: "Abhay Shah",
       image: "/devops-practices-implementation.jpg",
     },
     {
@@ -54,7 +57,8 @@ export default function Blog() {
       excerpt: "Choosing the right approach for your mobile application.",
       category: "Mobile",
       date: "Nov 25, 2025",
-      author: "Maya Singh",
+      slug: "/blog/mobile-app-development",
+      author: "Abhay Shah",
       image: "/mobile-app-development.png",
     },
   ]
@@ -71,13 +75,24 @@ export default function Blog() {
 
   return (
     <main>
-      <Header />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="absolute inset-0 -z-20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/heroBg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 -z-10 bg-black/80" />
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Blog & Resources</h1>
-          <p className="text-xl text-foreground/70 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Blog & Resources</h1>
+          <p className="text-xl text-foreground/70 max-w-2xl text-white/80">
             Stay updated with the latest insights and trends in IT solutions.
           </p>
         </div>
@@ -104,11 +119,10 @@ export default function Blog() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  selectedCategory === cat
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-card border border-border text-foreground hover:border-primary/50"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${selectedCategory === cat
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-card border border-border text-foreground hover:border-primary/50"
+                  }`}
               >
                 {cat}
               </button>
@@ -141,15 +155,15 @@ export default function Blog() {
                       </span>
                       <span className="text-xs text-foreground/60">{post.date}</span>
                     </div>
-                    <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    <a href={post.slug || "#"} className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                       {post.title}
-                    </h3>
+                    </a>
                     <p className="text-foreground/60 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-foreground/50">{post.author}</span>
-                      <button className="text-primary hover:text-primary/80 transition-colors">
+                      <a href={post.slug || "#"} className="text-primary hover:text-primary/80 transition-colors">
                         <ArrowRight size={16} />
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -164,7 +178,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-20 md:py-32 px-4 bg-card border-t border-border">
+      {/* <section className="py-20 md:py-32 px-4 bg-card border-t border-border">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">Subscribe to Our Newsletter</h2>
           <p className="text-foreground/70 mb-8">Get the latest insights and updates delivered to your inbox.</p>
@@ -182,9 +196,7 @@ export default function Blog() {
             </button>
           </form>
         </div>
-      </section>
-
-      <Footer />
+      </section> */}
     </main>
   )
 }

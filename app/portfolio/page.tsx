@@ -1,9 +1,7 @@
 "use client"
 
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 import { useState } from "react"
 
 export default function Portfolio() {
@@ -13,6 +11,7 @@ export default function Portfolio() {
     {
       title: "E-Commerce Platform",
       category: "Web",
+      slug: "/portfolio/ecommerce-platform",
       image: "/ecommerce-platform-concept.png",
       problem: "Legacy system unable to handle peak traffic",
       solution: "Built scalable microservices architecture with cloud deployment",
@@ -21,6 +20,7 @@ export default function Portfolio() {
     {
       title: "Mobile Banking App",
       category: "Mobile",
+      slug: "/portfolio/banking-app-mobile",
       image: "/banking-app-mobile.jpg",
       problem: "Need secure mobile-first banking solution",
       solution: "Developed React Native app with end-to-end encryption",
@@ -30,6 +30,7 @@ export default function Portfolio() {
       title: "Analytics Dashboard",
       category: "Software",
       image: "/analytics-dashboard.png",
+      slug: "/portfolio/analytics-dashboard",
       problem: "Data scattered across multiple systems",
       solution: "Created unified analytics dashboard with real-time insights",
       tech: "Next.js, Python, PostgreSQL, Tableau",
@@ -37,6 +38,7 @@ export default function Portfolio() {
     {
       title: "Cloud Migration",
       category: "Cloud",
+      slug: "/portfolio/cloud-infrastructure",
       image: "/cloud-infrastructure.png",
       problem: "On-premises infrastructure difficult to maintain",
       solution: "Migrated entire infrastructure to AWS with zero downtime",
@@ -46,6 +48,7 @@ export default function Portfolio() {
       title: "Security Audit System",
       category: "Security",
       image: "/security-audit-system.jpg",
+      slug: "/portfolio/security-audit-system",
       problem: "Need comprehensive security assessment",
       solution: "Implemented automated security scanning and compliance",
       tech: "Python, OWASP, Burp Suite, AI/ML",
@@ -54,6 +57,7 @@ export default function Portfolio() {
       title: "Enterprise CRM",
       category: "Software",
       image: "/crm-enterprise-system.jpg",
+      slug: "/portfolio/crm-enterprise-system",
       problem: "Manual customer management processes",
       solution: "Developed custom CRM with automation capabilities",
       tech: "Angular, .NET, SQL Server, Azure",
@@ -66,13 +70,24 @@ export default function Portfolio() {
 
   return (
     <main>
-      <Header />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="absolute inset-0 -z-20">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/heroBg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="absolute inset-0 -z-10 bg-black/80" />
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Portfolio</h1>
-          <p className="text-xl text-foreground/70 max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">Our Portfolio</h1>
+          <p className="text-xl text-foreground/70 max-w-2xl text-white/80">
             Explore our recent projects and see what we can do for you.
           </p>
         </div>
@@ -86,11 +101,10 @@ export default function Portfolio() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                  activeFilter === filter
+                className={`px-6 py-2 rounded-full font-semibold transition-all ${activeFilter === filter
                     ? "bg-primary text-primary-foreground"
                     : "bg-card border border-border text-foreground hover:border-primary/50"
-                }`}
+                  }`}
               >
                 {filter}
               </button>
@@ -121,9 +135,9 @@ export default function Portfolio() {
                   </span>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
                   <p className="text-foreground/60 text-sm mb-4">{project.solution}</p>
-                  <button className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                  <a href={project.slug || "#"} className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                     View Case Study <ArrowRight size={16} />
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -184,8 +198,6 @@ export default function Portfolio() {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </main>
   )
 }
