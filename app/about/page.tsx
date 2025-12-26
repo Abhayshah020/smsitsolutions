@@ -5,10 +5,10 @@ import Image from "next/image"
 
 export default function About() {
   const team = [
-    { name: "Manish Kumar Shah", role: "Founder & CEO", image: "/manishkumarshah.jpg" },
+    { name: "Manish Kumar Shah", role: "Founder & CEO", image: "/manishkumarshah.jpeg" },
     { name: "Abhay Shah", role: "Director & CTO", image: "/3.jpeg" },
     { name: "Kripanand Sah", role: "Social Media Manager", image: "/2.jpeg" },
-    { name: "Rajkumar Subedi", role: "Managing Director", image: "/3.jpg" },
+    { name: "Rajkumar Subedi", role: "Managing Director", image: "/4.jpeg" },
   ]
 
   const awards = [
